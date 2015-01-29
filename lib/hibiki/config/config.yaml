@@ -1,0 +1,43 @@
+port: 10012
+
+servers:
+
+  - name:         ZooKeeper
+    port:         2181
+    description:  ZooKeeper server
+    init:         /etc/hibiki/init/zookeeper.sh
+
+  - name:         MySQL
+    port:         3306
+    description:  MySQL server
+    init:         /etc/hibiki/init/mysql.sh
+
+  - name:         Mesos
+    port:         5050
+    description:  Mesos server
+    init:         /etc/hibiki/init/mesos.sh
+
+  - name:         Redis
+    port:         6379
+    description:  Redis server
+    init:         /etc/hibiki/init/redis.sh
+
+  - name:         Cassandra
+    port:         9042
+    description:  Cassandra server
+    init:         /etc/hibiki/init/cassandra.sh
+
+  - name:         Memcached
+    port:         11211
+    description:  Memcached server
+    init:         /etc/hibiki/init/memcached.sh
+
+  - name:         Fluentd
+    port:         24224
+    description:  Fluentd server
+    init:         /etc/hibiki/init/fluentd.sh
+
+  - name:         MongoDB
+    port:         27017
+    description:  MongoDB server
+    init:         /etc/hibiki/init/mongo.sh

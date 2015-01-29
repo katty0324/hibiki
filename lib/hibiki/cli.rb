@@ -10,8 +10,8 @@ module Hibiki
         config = YAML.load_file('/etc/hibiki/config.yaml')
 
         config['servers'].each { |server|
+          puts server['name'] + ': Listen to port ' + server['port'].to_s
           Thread.start {
-            puts server['name'] + ': Listen to port ' + server['port'].to_s
             tcp_server = TCPServer.open(server['port'])
             socket = tcp_server.accept
             socket.close
