@@ -1,11 +1,31 @@
 require 'socket'
+require 'yaml'
 
 module Hibiki
   module Cli
     class << self
 
       def start(args = ARGV)
-        exit 0
+
+        config = YAML.load_file('/etc/hibiki/config.yaml')
+
+        config['servers'].each { |server|
+          Thread.start {
+            puts server['name'] + ': Listen to port ' + server['port'].to_s
+            tcp_server = TCPServer.open(server['port'])
+            socket = tcp_server.accept
+            socket.close
+            tcp_server.close
+            puts server['name'] + ': Initialize with script ' + server['init']
+            system server['init']
+          }
+        }
+
+        tcp_server = TCPServer.open(config['port'])
+        socket = tcp_server.accept
+        socket.close
+        tcp_server.close
+
       end
 
     end
