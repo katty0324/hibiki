@@ -1,5 +1,6 @@
 require 'socket'
 require 'yaml'
+require 'optparse'
 
 module Hibiki
   module Cli
@@ -7,7 +8,19 @@ module Hibiki
 
       def start(args = ARGV)
 
-        config = YAML.load_file('/etc/hibiki/config.yaml')
+        opt = OptionParser.new
+
+        options = {
+          :config_path => '/etc/hibiki/config.yaml',
+        }
+
+        opt.on('-c', '--config PATH', 'configuration file path') { |v|
+          options[:config_path] = v
+        }
+
+        opt.parse(ARGV)
+        
+        config = YAML.load_file(options[:config_path])
 
         config['servers'].each { |server|
           puts '[' + server['name'] + '] Listen to port ' + server['port'].to_s
