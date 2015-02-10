@@ -8,10 +8,17 @@ Fake tcp server to launch real tcp servers.
 gem install hibiki
 ```
 
-## Usage
+## Quick start
 
 ```sh
-./hibiki
+./bin/hibiki -c ./lib/hibiki/config/config.yaml 
+```
+
+## Usage
+
+```
+Usage: hibiki [options]
+    -c, --config PATH                configuration file path
 ```
 
 ## Configuration
@@ -24,7 +31,7 @@ servers:
   - name:         MySQL
     port:         3306
     description:  MySQL server
-    init:         /etc/hibiki/init/mysql.sh
+    execute:      mysqld > /dev/null 2>&1
 ```
 
 ## Contributing
