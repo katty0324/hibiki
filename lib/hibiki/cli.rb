@@ -10,14 +10,14 @@ module Hibiki
         config = YAML.load_file('/etc/hibiki/config.yaml')
 
         config['servers'].each { |server|
-          puts server['name'] + ': Listen to port ' + server['port'].to_s
+          puts '[' + server['name'] + '] Listen to port ' + server['port'].to_s
           Thread.start {
             tcp_server = TCPServer.open(server['port'])
             socket = tcp_server.accept
             socket.close
             tcp_server.close
-            puts server['name'] + ': Initialize with script ' + server['init']
-            system server['init']
+            puts '[' + server['name'] + '] Execute command `' + server['execute'] + '`'
+            system server['execute']
           }
         }
 

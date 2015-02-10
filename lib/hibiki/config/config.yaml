@@ -5,39 +5,39 @@ servers:
   - name:         ZooKeeper
     port:         2181
     description:  ZooKeeper server
-    init:         /etc/hibiki/init/zookeeper.sh
+    execute:      zookeeper >/dev/null 2>&1
 
   - name:         MySQL
     port:         3306
     description:  MySQL server
-    init:         /etc/hibiki/init/mysql.sh
+    execute:      mysqld >/dev/null 2>&1
 
   - name:         Mesos
     port:         5050
     description:  Mesos server
-    init:         /etc/hibiki/init/mesos.sh
+    execute:      mesos-local >/dev/null 2>&1
 
   - name:         Redis
     port:         6379
     description:  Redis server
-    init:         /etc/hibiki/init/redis.sh
+    execute:      redis-server >/dev/null 2>&1
 
   - name:         Cassandra
     port:         9042
     description:  Cassandra server
-    init:         /etc/hibiki/init/cassandra.sh
+    execute:      cassandra >/dev/null 2>&1
 
   - name:         Memcached
     port:         11211
     description:  Memcached server
-    init:         /etc/hibiki/init/memcached.sh
+    execute:      memcached >/dev/null 2>&1
 
   - name:         Fluentd
     port:         24224
     description:  Fluentd server
-    init:         /etc/hibiki/init/fluentd.sh
+    execute:      fluentd >/dev/null 2>&1
 
   - name:         MongoDB
     port:         27017
     description:  MongoDB server
-    init:         /etc/hibiki/init/mongo.sh
+    execute:      mongod >/dev/null 2>&1
