@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 $:.push File.expand_path("../../lib", __FILE__)
-require 'hibiki/cli'
-Hibiki::Cli.start
+require 'tcpkicker/cli'
+Tcpkicker::Cli.start

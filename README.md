@@ -1,23 +1,23 @@
-# Hibiki
+# tcpkicker
 
 Fake tcp server to launch real tcp servers.
 
 ## Installation
 
 ```sh
-gem install hibiki
+gem install tcpkicker
 ```
 
 ## Quick start
 
 ```sh
-./bin/hibiki -c ./lib/hibiki/config/config.yaml 
+./bin/tcpkicker -c ./lib/tcpkicker/config/config.yaml 
 ```
 
 ## Usage
 
 ```
-Usage: hibiki [options]
+Usage: tcpkicker [options]
     -c, --config PATH                configuration file path
 ```
 

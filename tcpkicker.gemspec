@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'hibiki/version'
+require 'tcpkicker/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'hibiki'
-  spec.version       = Hibiki::VERSION
+  spec.name          = 'tcpkicker'
+  spec.version       = Tcpkicker::VERSION
   spec.authors       = ['Naoyuki Kataoka']
   spec.email         = ['kataokanaoyuki@gmail.com']
   spec.summary       = 'Fake tcp server to launch real tcp servers.'
   spec.description   = 'Fake tcp server to launch real tcp servers.'
-  spec.homepage      = 'https://github.com/katty0324/hibiki'
+  spec.homepage      = 'https://github.com/katty0324/tcpkicker'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

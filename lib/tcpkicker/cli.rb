@@ -2,7 +2,7 @@ require 'socket'
 require 'yaml'
 require 'optparse'
 
-module Hibiki
+module Tcpkicker
   module Cli
     class << self
 
@@ -11,7 +11,7 @@ module Hibiki
         opt = OptionParser.new
 
         options = {
-          :config_path => '/etc/hibiki/config.yaml',
+          :config_path => '/etc/tcpkicker/config.yaml',
         }
 
         opt.on('-c', '--config PATH', 'configuration file path') { |v|
