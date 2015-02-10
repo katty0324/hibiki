@@ -1,0 +1,43 @@
+port: 10012
+
+servers:
+
+  - name:         ZooKeeper
+    port:         2181
+    description:  ZooKeeper server
+    execute:      zookeeper > /dev/null 2>&1
+
+  - name:         MySQL
+    port:         3306
+    description:  MySQL server
+    execute:      mysqld > /dev/null 2>&1
+
+  - name:         Mesos
+    port:         5050
+    description:  Mesos server
+    execute:      mesos-local > /dev/null 2>&1
+
+  - name:         Redis
+    port:         6379
+    description:  Redis server
+    execute:      redis-server > /dev/null 2>&1
+
+  - name:         Cassandra
+    port:         9042
+    description:  Cassandra server
+    execute:      cassandra > /dev/null 2>&1
+
+  - name:         Memcached
+    port:         11211
+    description:  Memcached server
+    execute:      memcached > /dev/null 2>&1
+
+  - name:         Fluentd
+    port:         24224
+    description:  Fluentd server
+    execute:      fluentd > /dev/null 2>&1
+
+  - name:         MongoDB
+    port:         27017
+    description:  MongoDB server
+    execute:      mongod > /dev/null 2>&1
